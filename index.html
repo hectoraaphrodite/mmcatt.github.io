@@ -290,6 +290,264 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/wrong-automation-reason/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cynthia Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mylogo1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/wrong-automation-reason/" itemprop="url">
+                  错误的自动化测试目标 VS 建议目标
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-03 11:55:43 / 修改时间：12:01:34" itemprop="dateCreated datePublished" datetime="2018-05-03T11:55:43+08:00">2018-05-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/automation/" itemprop="url" rel="index"><span itemprop="name">automation</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>翻译整理自Dorothy Graham 和 Mark Fewster的文章<br>That’s no Reason To Automate, 发表在Better Software, July/August 2009.</p>
+<p>并非全文翻译，只是根据自己的理解，提炼整理了文中的相关观点。</p>
+<h1 id="发现更多bug"><a href="#发现更多bug" class="headerlink" title="发现更多bug"></a>发现更多bug</h1><ul>
+<li>目标背后的好想法<ul>
+<li>测试应该发现bug，所以自动化测试应该更快的发现它们</li>
+<li>因为测试可以执行的更快，所以我们可以执行更多测试，发现更多bug</li>
+<li>我们可以对系统测试更多，所以我们应该在那些不能执行手工测试的部分发现更多bug</li>
+</ul>
+</li>
+<li>测试质量决定是否发现bug</li>
+<li>如果最初进行的是手工测试，发现的bug应当被修复</li>
+<li>重复旧测试并不能比进行新测试发现更多bug</li>
+<li>更好的目标<ul>
+<li>帮助测试人员发现更多的回归bug<h1 id="在夜间和周末运行回归测试"><a href="#在夜间和周末运行回归测试" class="headerlink" title="在夜间和周末运行回归测试"></a>在夜间和周末运行回归测试</h1></li>
+</ul>
+</li>
+<li>目标背后的好想法<ul>
+<li>我们有未利用的资源（夜晚和周末）</li>
+<li>我们应该在睡觉的时候执行自动化</li>
+</ul>
+</li>
+<li>要达到这个目标太简单了，只要运行测试，而不管他是否值得运行</li>
+<li>可以运行更多的自动化测试，但你需要证明需这些测试执行是有用的</li>
+<li>衡量的方法之一是对所有的自动化测试，估算对应手工执行的时间，并进行衡量</li>
+<li>更好的目标<ul>
+<li>利用未充分利用的计算机资源，运行最重要的或最有用的测试<h1 id="减少测试人员"><a href="#减少测试人员" class="headerlink" title="减少测试人员"></a>减少测试人员</h1></li>
+</ul>
+</li>
+<li>目标背后的好想法<ul>
+<li>我们花钱在工具上了，所以应该在别处节省回来<br>我们想消减总的开支，而人员的开支比较高</li>
+</ul>
+</li>
+<li>很多manager会持这个观点</li>
+<li>当自动化引入，实际上很少出现减员</li>
+<li>相反，需要更多拥有测试脚本开发能力的人员</li>
+<li>自动化支持测试活动，而不是篡权</li>
+<li>自动化测试不等于全自动测试，需要人力开发脚本，分析测试结果，维护测试套件</li>
+<li>自动化可以提高测试执行的效率，但需要测试人员保证测试本身有效</li>
+<li>这个目的是管理的目标,不是一个适合自动化的目标</li>
+<li>更好的管理目标是确保每个人都是他们擅长执行任务。这不是一个自动化的目标,也不是降低测试成本。</li>
+<li>它可能是有效目标，但它是关于管理的，与自动化无关。</li>
+<li>更好的目标<ul>
+<li>总的自动化测试成本，必须显著低于被自动化测试所节省的总测试成本</li>
+<li>这可能部分的被以下指标所衡量：帮助人们每小时所提高的测试运行数或覆盖范围</li>
+<li>（这段我翻译的太拗口，大家看原文去吧）<h1 id="缩短测试时间"><a href="#缩短测试时间" class="headerlink" title="缩短测试时间"></a>缩短测试时间</h1></li>
+</ul>
+</li>
+<li>目标背后的好想法<ul>
+<li>减少截止日期压力——任何可以节省时间的方式都是好的</li>
+<li>测试是瓶颈，所以更快的测试会所有帮助</li>
+<li>我们想更快的将产品发布上市</li>
+</ul>
+</li>
+<li>这是个很危险的目标，它混淆了“测试”和“测试执行”，所以也会产生问题</li>
+<li>问题1：有很多容易的方法来达成目标：运行较短时间的测试，忽略长时间的测试，或者剪掉回归测试</li>
+<li>问题2：缩短测试时间，很容易给人一种缩短总体测试时间的错觉：而自动化工具专注于测试执行，并不是整个测试过程</li>
+<li>问题3：实际上，除了测试执行时间，还有很多因素会影响整体测试时间：自动化测试的设置和复位，确认缺陷并识别错误之处。手工测试时，你知道发现bug的上下文信息；而自动化测试只会告诉你差异之处，分析人员必须结合上下文信息，确认是否为真正的bug</li>
+<li>导致测试时间增加的重要因素是软件的质量，这取决于开发人员，而不是手工或自动化测试人员</li>
+<li>考虑维护成本：可能在第一个版本满足了目标，但是在接下来的版本中变的更糟</li>
+<li>更好的目标<ul>
+<li>对于工具所支持的测试活动，减少花费在它上面的时间</li>
+<li>这对自动化来说是一个持续的目标，去改善手动和现有自动化测试。</li>
+<li>它可以通过计算指定测试活动的时间，进行衡量。<h1 id="进行更多测试——重要的是质量而不是数量"><a href="#进行更多测试——重要的是质量而不是数量" class="headerlink" title="进行更多测试——重要的是质量而不是数量"></a>进行更多测试——重要的是质量而不是数量</h1></li>
+</ul>
+</li>
+<li>目标背后的好想法<ul>
+<li>对软件测得越多，就覆盖的越多</li>
+<li>测试是好的，所以更多的测试更好</li>
+</ul>
+</li>
+<li>好的测试不等于运行的测试数量，而是和所运行测试的价值有关</li>
+<li>自动化许多坏的测试，只能带来维护开销和少量回报</li>
+<li>自动化最好的测试，才能在时间和金钱方面带来价值、</li>
+<li>先从重要的部分开始自动化，当我们开始执行测试，会发现不同于计划部分的另外的测试需要进行自动化。自动化需要能够在方向上进行调整，而不必每次都从头开始</li>
+<li>自动化测试期间，开始可能需要较长的时间（相比手工时间）去自动化一个测试，因此可能导致短期内会运行较少的测试</li>
+<li>更好的目标<ul>
+<li>对于最有用和最有价值的测试，自动化最适宜的数量</li>
+<li>可以用最有价值的测试部分的自动化率进行衡量<h1 id="自动执行x-的测试"><a href="#自动执行x-的测试" class="headerlink" title="自动执行x%的测试"></a>自动执行x%的测试</h1></li>
+</ul>
+</li>
+<li>目标背后的好想法<ul>
+<li>需要衡量自动化工作的进展</li>
+<li>需要衡量自动化的质量</li>
+</ul>
+</li>
+<li>更重要和基础的要点是，去了解目前的测试质量，而不是已经做了多少自动化</li>
+<li>如果是些没什么用的坏测试，自动化它们也没什么用（只是执行的更快了）</li>
+<li>“Automated chaos is just faster chaos.”  </li>
+<li>如果目标是自动化50%的测试，是否自动化了正确的50%呢</li>
+<li>多少比例的测试应当被自动化？首先要排除这样的测试：那些实际上不可能，或者完全不切实际的自动化。</li>
+<li>自动化提供了支持测试的工具，不应当简单的自动化测试。</li>
+<li>更好的目标<ol>
+<li>自动化应当为测试提供有价值的支持</li>
+<li>可以这样衡量：测试人员有多经常使用自动化人员提供的内容，包括执行自动化测试和其他支持。</li>
+<li>通过自动化，增加了无需手工验证的数量<h1 id="你的自动化测试目标是什么？它们是好的目标吗？"><a href="#你的自动化测试目标是什么？它们是好的目标吗？" class="headerlink" title="你的自动化测试目标是什么？它们是好的目标吗？"></a>你的自动化测试目标是什么？它们是好的目标吗？</h1></li>
+</ol>
+</li>
+<li>不要把测试目标和自动化目标混为一谈</li>
+<li>选择更为合适的目标，并且衡量你实现的程度，这样你就能看出你的自动化成果是怎样使公司受益的</li>
+</ul>
+<p>下面附上相应的思维导图<br><img src="https://upload-images.jianshu.io/upload_images/9701136-7cd0a2a67bf22ced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误的自动化测试目标.png"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/automation-50tips-ch3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1384,7 +1642,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
