@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="由于内容过长，分章节来发表文章。目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第三章 环境） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 第四章 运行，记录日志，验证当在被测应用上运行测试时，详细的记录报告是很重要的。怎样组织测试，">
+<meta name="keywords" content="自动化,测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）">
+<meta property="og:url" content="http://yoursite.com/2018/05/04/automation-50tips-ch4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="由于内容过长，分章节来发表文章。目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第三章 环境） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 第四章 运行，记录日志，验证当在被测应用上运行测试时，详细的记录报告是很重要的。怎样组织测试，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-04T06:52:13.342Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）">
+<meta name="twitter:description" content="由于内容过长，分章节来发表文章。目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第三章 环境） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 第四章 运行，记录日志，验证当在被测应用上运行测试时，详细的记录报告是很重要的。怎样组织测试，">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/04/automation-50tips-ch4/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证） | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-automation">
+    <a href="/categories/automation" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />自动化</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-something">
+    <a href="/categories/something" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />随想</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/automation-50tips-ch4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cynthia Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mylogo1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-04 09:37:12 / 修改时间：14:52:13" itemprop="dateCreated datePublished" datetime="2018-05-04T09:37:12+08:00">2018-05-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/automation/" itemprop="url" rel="index"><span itemprop="name">automation</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于内容过长，分章节来发表文章。<br>目录<br><a href="/2018/05/02/automation-50tips-menu/" title="自动化测试人员需要知道的50件事(目录篇)">自动化测试人员需要知道的50件事(目录篇)</a><br>上一章<br><a href="/2018/05/03/automation-50tips-ch3/" title="自动化测试人员需要知道的50件事（第三章 环境）">自动化测试人员需要知道的50件事（第三章 环境）</a></p>
+<p>关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。</p>
+<h1 id="第四章-运行，记录日志，验证"><a href="#第四章-运行，记录日志，验证" class="headerlink" title="第四章 运行，记录日志，验证"></a>第四章 运行，记录日志，验证</h1><p>当在被测应用上运行测试时，详细的记录报告是很重要的。怎样组织测试，以及多久运行一次测试，也是十分重要的。<br>本章描述了一些这方面的最佳实践。</p>
+<h1 id="1-尽可能经常的运行脚本"><a href="#1-尽可能经常的运行脚本" class="headerlink" title="1. 尽可能经常的运行脚本"></a>1. 尽可能经常的运行脚本</h1><p>通常，在出现新版本时运行测试很有用。但是，如果测试不稳定，在应用程序正确运行的情况下也会失败，那么要测试有啥用呢？<br>刚刚创建测试时，可能会有很多不可预见的细节。例如，测试可以在较慢的计算机，虚拟机，其他设置或较慢的网络连接下正常工作吗？反之亦然？测试如何在更好的测试环境中工作？如果服务器上的数据量每次都不同并且应用程序的速度每次都会发生变化，会发生什么情况？<br>为了稳定你的测试，尽可能经常运行它们。他们越频繁地运行，就越有可能发现问题并立即解决问题。<br>不需要每次都在不同的版本上运行测试。您可以使用相同的版本进行多次运行。在引入自动化的阶段尤其如此，因为它没有太多的测试，并且不需要太多时间来完成所有测试。当套件中有越来越多的测试时，运行所有测试会变得更加困难，但是如果您经常运行脚本并修复不同的与测试相关的问题，那么您的测试将会更加稳定，并且不需要在相同的版本上进行这种常规运行。<br>运行脚本通常对于长时间工作并且取决于许多因素或执行大量验证的测试特别有用。这种测试应该进行最彻底的调试，因为将来你可能不希望经常运行它们（例如，每周一次，而不是每次构建），因此它们必须非常可靠。<br><strong>这一点尤为重要。所以并不是测试脚本开发完了，就算完了，还需要做如上所述的大量工作。但是真实项目中有的管理者可能就不理解，就会觉得给你多长时间写测试脚本，就够了。那么在这种情况下，如果测试人员本身不能认识到这一点的话，也是很难真正做好自动化测试的。</strong></p>
+<h1 id="2-执行失败测试的自动重启"><a href="#2-执行失败测试的自动重启" class="headerlink" title="2. 执行失败测试的自动重启"></a>2. 执行失败测试的自动重启</h1><p>有时在自动运行测试时会失败，但在分别运行每个失败的测试时会通过测试。 其中一个可能的原因是应用程序长时间使用时出现的错误或特定场景的问题。 这种情况需要进行调查，以找到其原因和可重现的情景，然后加以修复。<br>但是有时会出现这样的问题，因为特定的测试环境或自动化工具与被测应用程序的交互。 在这种情况下，测试可能没有明显的原因，或者只是报告无法复制的奇怪的第一眼错误。 如果是这种情况，则有必要自动重启因未知原因而失败的测试。 应该是这样的一个过程：</p>
+<ol>
+<li>在测试运行期间，每个失败测试的名称都会添加到列表中。</li>
+<li>所有测试完成后，我们必须重新启动自动化工具。</li>
+<li>我们单独运行每个失败的测试，并分别记录结果。</li>
+<li>然后我们手动检查结果。<br>如果其中一项测试仍然经常失败，那么更仔细地研究问题可能是有意义的。 如果你看不到明显的问题，但第二次测试成功，你可以认为它们是成功的。<br>不过要小心！ 由于测试本身或测试应用程序的错误，测试总是有可能首次失败，重新开始测试只不过是隐藏了问题。 然而，在这种情况下，理解错误的原因并消除错误是有意义的。 为了识别这些测试，你应该从最初执行测试时进行统计，并经常查看是否存在“可疑”测试。<br><strong>总结的非常到位。在我实际的项目经验中，运行自动化测试时，即使程序本身是正确的，也经常会出现一些测试失败。</strong><br><strong>这里详尽的总结了这类情况，并且明确指出了如何区分以下两种情况：何时是真正的失败，何时只是自动化工具和被测应用之间的交互，或者其他原因导致的“失败”。</strong><br><strong>想一想，当出现失败的时候，你是怎么分析和处理的呢？是不是简单的重跑失败的测试，如果通过，就认为它是正常的呢？</strong><h1 id="3-对于被禁用的测试需要给出相关注释"><a href="#3-对于被禁用的测试需要给出相关注释" class="headerlink" title="3. 对于被禁用的测试需要给出相关注释"></a>3. 对于被禁用的测试需要给出相关注释</h1>有时候你可能需要暂时禁用一个已存在的测试。例如，如果测试产生影响其他测试的错误，或者在测试中的应用程序中临时禁用了相应的功能，则可能需要禁用该功能。此时需要给出相关注释。注释中需要写清楚禁用人，日期，原因。<br>这样，时间长了看到注释就能知道原因，同时也方便其他测试者明白为什么测试被禁用了。<br>更进一步的，你可以做一个自动验证，去查看和缺陷相关的测试是否已经被运行。如果缺陷已经关闭，可以自动运行测试，或者生成错误，指出应该启用测试。<br>如有必要，不时查看被禁用的测试并更新它们也很有用。 例如，经过一段时间后，禁用测试所测试的功能可以从应用程序中完全删除。 在这种情况下，存储相应的测试是没有意义的。<br><strong>给出注释是有必要的，利人利己。如果长期禁用一些测试，要定期检查，是否有必要删除它们？</strong><h1 id="4-日志中的错误信息应该有意义"><a href="#4-日志中的错误信息应该有意义" class="headerlink" title="4. 日志中的错误信息应该有意义"></a>4. 日志中的错误信息应该有意义</h1>想想一下，这样的错误信息：<br>ERROR: incorrect value<br>这有什么意义吗？所以需要尽可能详细的给出错误相关信息。比如下面这种就清晰多了：<br>ERROR verifying result for expression “2+2*2”. Expected: “6”, actual: “8”<h1 id="5-出错的时候截个图"><a href="#5-出错的时候截个图" class="headerlink" title="5. 出错的时候截个图"></a>5. 出错的时候截个图</h1>不管你的日志有多详细，都不如一张截图说的明白。尤其是对于GUI应用，当遇到下面的情况时：<ul>
+<li>直观地了解错误总是更容易。</li>
+<li>碰巧被测试的应用程序受到某些无法预见的影响（例如，出现了引起焦点的系统消息）。<br>有些自动化工具建议在每次自动化工具与测试应用程序进行交互时创建屏幕截图。 不建议这样做，因为如此大量的图片会增加日志的大小，并且对这些屏幕截图的需求非常少见。<br>注意不同类型的应用程序的一些功能：</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>桌面应用程序很少包含滚动页面。所有控件通常放置在一个窗口中，或者在Next按钮的帮助下使用不同窗口之间的多个转换。</li>
+<li>对于Web应用程序，需要滚动浏览所有内容的长页面很常见。您可能需要任何截图来捕获整个滚动区域。<br>通常，工具可以让你获取屏幕或页面的屏幕截图，对于这些操作，可能需要调用不同的功能。因此，在使用Web应用程序并保存屏幕截图时，请始终考虑所需的信息类型。<br>如果需要整个页面的内容，请准确保存页面。如果你需要截图（例如，不仅要查看浏览器窗口，还要查看其他应用程序），然后使用保存整个屏幕的方法，同时记住一些页面内容可能不适合图像。<h1 id="6-将测试添加到常规运行之前，要检验其精确性"><a href="#6-将测试添加到常规运行之前，要检验其精确性" class="headerlink" title="6. 将测试添加到常规运行之前，要检验其精确性"></a>6. 将测试添加到常规运行之前，要检验其精确性</h1>需要确保测试在困难条件下正常运行，并且自动化工具不会冻结或崩溃。 当测试和工具表现可预测时，快速了解失败测试的原因总是更容易。<h1 id="7-避免比较图像"><a href="#7-避免比较图像" class="headerlink" title="7. 避免比较图像"></a>7. 避免比较图像</h1>很多时候，新手自动化工程师犯了比较图像而不是结果的错误。例如，他们无法检查控件的各个属性，因此他们会验证该元素或甚至整个窗口的屏幕截图，以对照已知的元素或窗口的良好图像。<br>比较屏幕截图的这种方法很糟糕，原因如下：</li>
+<li>元素外观或大小的轻微变化会导致错误。</li>
+<li>比较图像比比较相同元素的属性慢得多。</li>
+<li>更新此类验证点的预期结果通常比更新属性更耗时。<br>通常，由于缺乏对自动化工具的知识（当然，该工具支持被测试应用程序的类型以及此特定控件），会对元素的屏幕截图进行验证。最好花几天时间弄清楚如何与应用程序一起工作，而不是在将来每周花费几个小时来支持某些可以避免的一般情况。<br><strong>哇哦，在实际项目中我倒是没有碰到过这样的情况。如果以后有碰到，一定要说服他们采用其他的验证方式。</strong><br>尽管如此，虽然截图的验证在自动化中被认为是不好的风格，但有几种情况可以使用该方法：</li>
+<li>某些工具只能用于屏幕截图; 这使得它们适用于任何应用程序; 然而他们相对较慢，他们的测试不太稳定。</li>
+<li>如果您正在测试与图形相关的应用程序，则屏幕截图的比较通常是执行验证的唯一可行方法。</li>
+<li>如果仍无法使用控件，最好使用屏幕截图，而不是盲目点击窗口的坐标。<br>在这些情况下，如果自动化工具提供了一些高级设置，这通常是有意义的。要查找的设置包括以下内容：</li>
+<li>不准确的机密间隔 Inaccuracy confidential interval （可以称为阈值或容差） - 允许您忽略一定数量的差异，以像素或百分比指定。</li>
+<li>透明度 - 允许您在验证过程中指定屏幕截图中必须忽略的区域（例如，可能有日期字段，每天更改）。</li>
+<li>部分比较 - 比较不是整个控件的截图，而只是比较整个控件的重要部分（例如，对于按钮，它足以验证文本所在的区域）。<br>可用选项集取决于您使用的工具。一些工具为图像比较提供了多种选择，而其他工具根本没有任何选择。如果你不够使用没有必要选项的工具，你可以编写自己的函数来执行图像比较，尽管这可能是一项棘手的任务。<br><strong>由于几乎没有接触过这种自动化工具，所以这里翻译了较多的内容，并且没有做过多评论。</strong><br><strong>但是我曾经做过和图像处理相关的研究和开发工作，处理图像的确是需要耗费较多时间的事情。所以如果有更好更有效率的比较方式，还是不要为难图片了吧。尽管现在我们的机器硬件处理能力很强大，处理图片也会比以前更快。</strong></li>
+</ul>
+<p>下一章<br></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/自动化/" rel="tag"># 自动化</a>
+          
+            <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/wrong-automation-reason/" rel="next" title="错误的自动化测试目标 VS 建议目标">
+                <i class="fa fa-chevron-left"></i> 错误的自动化测试目标 VS 建议目标
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/mylogo1.jpg"
+                alt="Cynthia Wang" />
+            
+              <p class="site-author-name" itemprop="name">Cynthia Wang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-运行，记录日志，验证"><span class="nav-number">1.</span> <span class="nav-text">第四章 运行，记录日志，验证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-尽可能经常的运行脚本"><span class="nav-number">2.</span> <span class="nav-text">1. 尽可能经常的运行脚本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-执行失败测试的自动重启"><span class="nav-number">3.</span> <span class="nav-text">2. 执行失败测试的自动重启</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-对于被禁用的测试需要给出相关注释"><span class="nav-number">4.</span> <span class="nav-text">3. 对于被禁用的测试需要给出相关注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-日志中的错误信息应该有意义"><span class="nav-number">5.</span> <span class="nav-text">4. 日志中的错误信息应该有意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-出错的时候截个图"><span class="nav-number">6.</span> <span class="nav-text">5. 出错的时候截个图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-将测试添加到常规运行之前，要检验其精确性"><span class="nav-number">7.</span> <span class="nav-text">6. 将测试添加到常规运行之前，要检验其精确性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-避免比较图像"><span class="nav-number">8.</span> <span class="nav-text">7. 避免比较图像</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cynthia Wang</span>
+
+  
+
+  
+</div>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
