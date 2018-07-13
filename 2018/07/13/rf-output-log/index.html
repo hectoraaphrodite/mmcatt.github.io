@@ -112,7 +112,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-fe0e1cf55ad3549f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-13T03:13:05.408Z">
+<meta property="og:updated_time" content="2018-07-13T03:17:03.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RobotFramework二次开发之--输出Message Log">
 <meta name="twitter:description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
@@ -339,7 +339,7 @@
                 
               
 
-              <time title="创建时间：2018-07-13 11:08:47 / 修改时间：11:13:05" itemprop="dateCreated datePublished" datetime="2018-07-13T11:08:47+08:00">2018-07-13</time>
+              <time title="创建时间：2018-07-13 11:08:47 / 修改时间：11:17:03" itemprop="dateCreated datePublished" datetime="2018-07-13T11:08:47+08:00">2018-07-13</time>
             
 
             
@@ -406,7 +406,7 @@
 <li>RED编辑器的Message Log窗口展示的日志。如图所示。<br><img src="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="messageLog.jpg"></li>
 </ol>
 <h1 id="查找log来源"><a href="#查找log来源" class="headerlink" title="查找log来源"></a>查找log来源</h1><p>接下来看看这部分log是从哪儿得到的，查看Console窗口可以发现，RED也是通过命令行的方式来调用case的，以下是RED执行case时的命令：<br>Command: /usr/local/Cellar/python/3.6.4_3/bin/python -m robot.run –listener /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/TestRunnerAgent.py:52030 –argumentfile /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/args_9cf946db.arg /Users/yunduanapi_test<br>发现这里用了一个–listener参数，后面还带了一个TestRunnerAgent.py文件和相应的端口号。<br>使用netstat -an | grep 52030发现，当运行case的时候，这个端口是打开的<br>tcp4       0      0  127.0.0.1.52030        127.0.0.1.52035        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52035        127.0.0.1.52030        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52030        <em>.</em>                    LISTEN<br>说明存在socket通讯。<br>再去查看TestRunnerAgent.py文件，注释就写的很清楚了：<br>‘’’<br>A Robot Framework listener that sends information to a socket<br>‘’’</p>
-<h1 id="重写监听类"><a href="#重写监听类" class="headerlink" title="重写监听类"></a>重写监听类</h1><p>于是接下来参考前面提到的博文，新建RobotListener.py，重写监听类：<br>‘’’<br>   class RobotListener(object):<br>       ROBOT_LISTENER_API_VERSION = 2</p>
+<h1 id="重写监听类"><a href="#重写监听类" class="headerlink" title="重写监听类"></a>重写监听类</h1><p>于是接下来参考前面提到的博文，以及官网对listener参数的说明：<br><a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface" target="_blank" rel="noopener">http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface</a><br>新建RobotListener.py，重写监听类：<br>‘’’<br>   class RobotListener(object):<br>       ROBOT_LISTENER_API_VERSION = 2</p>
 <pre><code>def start_suite(self, name, args):
     print &quot;Starting Suite : &quot; + name + &quot;  &quot; + args[&apos;source&apos;]
 
