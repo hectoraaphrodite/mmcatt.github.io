@@ -102,25 +102,28 @@
 
 
 
-  <meta name="description" content="目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 1. 写的测试要让非自动化工程师也能看懂测试应该写得很好，以便易于维护和修改，并使您能够轻松找到执行过程中出现">
+  <meta name="description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
 <meta name="keywords" content="自动化,测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自动化测试人员需要知道的50件事（第五章 审查）">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/automation-50tips-ch5/index.html">
+<meta property="og:title" content="RobotFramework二次开发之--输出Message Log">
+<meta property="og:url" content="http://yoursite.com/2018/07/13/rf-output-log/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
-<meta property="og:description" content="目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 1. 写的测试要让非自动化工程师也能看懂测试应该写得很好，以便易于维护和修改，并使您能够轻松找到执行过程中出现">
+<meta property="og:description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-31T09:05:11.945Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-fe0e1cf55ad3549f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-13T03:13:05.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自动化测试人员需要知道的50件事（第五章 审查）">
-<meta name="twitter:description" content="目录自动化测试人员需要知道的50件事(目录篇)上一章自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证） 关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。 1. 写的测试要让非自动化工程师也能看懂测试应该写得很好，以便易于维护和修改，并使您能够轻松找到执行过程中出现">
+<meta name="twitter:title" content="RobotFramework二次开发之--输出Message Log">
+<meta name="twitter:description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/automation-50tips-ch5/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/13/rf-output-log/"/>
 
 
 
@@ -130,7 +133,7 @@
   };
 </script>
 
-  <title>自动化测试人员需要知道的50件事（第五章 审查） | Cynthia Wang</title>
+  <title>RobotFramework二次开发之--输出Message Log | Cynthia Wang</title>
   
 
 
@@ -294,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/automation-50tips-ch5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/rf-output-log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cynthia Wang">
@@ -311,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自动化测试人员需要知道的50件事（第五章 审查）
+          <h1 class="post-title" itemprop="name headline">RobotFramework二次开发之--输出Message Log
               
             
           </h1>
@@ -336,24 +339,12 @@
                 
               
 
-              <time title="创建时间：2018-05-04 15:23:08" itemprop="dateCreated datePublished" datetime="2018-05-04T15:23:08+08:00">2018-05-04</time>
+              <time title="创建时间：2018-07-13 11:08:47 / 修改时间：11:13:05" itemprop="dateCreated datePublished" datetime="2018-07-13T11:08:47+08:00">2018-07-13</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-31 17:05:11" itemprop="dateModified" datetime="2018-05-31T17:05:11+08:00">2018-05-31</time>
               
             
           </span>
@@ -404,14 +395,36 @@
       
 
       
-        <p>目录<br><a href="/2018/05/02/automation-50tips-menu/" title="自动化测试人员需要知道的50件事(目录篇)">自动化测试人员需要知道的50件事(目录篇)</a><br>上一章<br><a href="/2018/05/04/automation-50tips-ch4/" title="自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）">自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）</a></p>
-<p>关于这部分的说明：非原文翻译，是我根据作者原文，加上自己的理解，写下的内容。算是半笔记半心得体会性质的原创内容。为了加以区分，尽量把纯粹是自己观点的大段文字做了加粗处理。</p>
-<h1 id="1-写的测试要让非自动化工程师也能看懂"><a href="#1-写的测试要让非自动化工程师也能看懂" class="headerlink" title="1. 写的测试要让非自动化工程师也能看懂"></a>1. 写的测试要让非自动化工程师也能看懂</h1><p>测试应该写得很好，以便易于维护和修改，并使您能够轻松找到执行过程中出现故障的原因。 那么，如何确定测试是否写得好？<br>一种方法是让自动化工程师编写一个测试，将其展示给不熟悉编程的测试人员。 如果测试人员了解测试的内容，那么测试被认为是很好的。</p>
-<h1 id="2-避免无必要的优化"><a href="#2-避免无必要的优化" class="headerlink" title="2. 避免无必要的优化"></a>2. 避免无必要的优化</h1><p>根据约束理论，优化应始终从最薄弱的部分开始。在测试自动化中，这部分通常是被测试的应用程序。并不总是，但经常。测试脚本的优化通常不会提供任何好处。<br>当然，如果你知道另一个更快的算法，你不需要总是使用最慢的算法。我并不是说你永远不需要优化。有时间进行优化。<br>我建议你在两种情况下优化测试：</p>
-<ul>
-<li>如果测试运行时间过长，并且在测试执行期间被测试的应用程序处于空闲状态。</li>
-<li>如果在代码中看到明显的问题，那么纠正它不会花费太多时间。<br>从整个系统（脚本，被测应用程序以及执行测试的环境）的角度来看，应该始终关注脚本的性能。为此，在项目开始时，最好确定自动测试应满足的质量标准（所有测试的速度，运行某些测试的频率等）并遵循这些标准。<h1 id="3-经常审查别人的代码"><a href="#3-经常审查别人的代码" class="headerlink" title="3. 经常审查别人的代码"></a>3. 经常审查别人的代码</h1></li>
-</ul>
+        <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。</p>
+<blockquote>
+<p>不了解RED的，可以戳官网:<br><a href="http://nokia.github.io/RED/help/" target="_blank" rel="noopener">http://nokia.github.io/RED/help/</a><br>可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。</p>
+</blockquote>
+<p>而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中，自动运行，不走RED，所以也不会看到这一栏啦。<br>于是就开始探索这部分log的来源。搜索了无数资料，发现一个有用的：<br><a href="https://blog.csdn.net/wyb199026/article/details/78730097" target="_blank" rel="noopener">https://blog.csdn.net/wyb199026/article/details/78730097</a><br>只是作者用的是RIDE，虽然原理上差不多，但是作为没有仔细研究过RF源码的我来说，还是花了点功夫的。<br>那么结合查找资料和自己的经验心得，我对log的理解如下：</p>
+<ol>
+<li>运行时Console展示的日志。如果通过命令行运行，你可以在窗口看到这些日志。如果通过Jenkins启动任务，你可以在[Console Output]中看到这部分日志。如果和我一样用RED编辑器，你会在Console窗口看到这部分日志</li>
+<li>执行后得到的log.html文件，这个会自动输出文件的。</li>
+<li>RED编辑器的Message Log窗口展示的日志。如图所示。<br><img src="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="messageLog.jpg"></li>
+</ol>
+<h1 id="查找log来源"><a href="#查找log来源" class="headerlink" title="查找log来源"></a>查找log来源</h1><p>接下来看看这部分log是从哪儿得到的，查看Console窗口可以发现，RED也是通过命令行的方式来调用case的，以下是RED执行case时的命令：<br>Command: /usr/local/Cellar/python/3.6.4_3/bin/python -m robot.run –listener /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/TestRunnerAgent.py:52030 –argumentfile /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/args_9cf946db.arg /Users/yunduanapi_test<br>发现这里用了一个–listener参数，后面还带了一个TestRunnerAgent.py文件和相应的端口号。<br>使用netstat -an | grep 52030发现，当运行case的时候，这个端口是打开的<br>tcp4       0      0  127.0.0.1.52030        127.0.0.1.52035        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52035        127.0.0.1.52030        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52030        <em>.</em>                    LISTEN<br>说明存在socket通讯。<br>再去查看TestRunnerAgent.py文件，注释就写的很清楚了：<br>‘’’<br>A Robot Framework listener that sends information to a socket<br>‘’’</p>
+<h1 id="重写监听类"><a href="#重写监听类" class="headerlink" title="重写监听类"></a>重写监听类</h1><p>于是接下来参考前面提到的博文，新建RobotListener.py，重写监听类：<br>‘’’<br>   class RobotListener(object):<br>       ROBOT_LISTENER_API_VERSION = 2</p>
+<pre><code>def start_suite(self, name, args):
+    print &quot;Starting Suite : &quot; + name + &quot;  &quot; + args[&apos;source&apos;]
+
+def start_test(self, name, args):
+    print &quot;Starting test : &quot; + name
+    if args[&apos;template&apos;]:
+        print &apos;Template is : &apos; + args[&apos;template&apos;]
+
+def end_test(self, name, args):
+    print &quot;Ending test:  &quot; + args[&apos;longname&apos;]
+    print &quot;Test Result is : &quot; + args[&apos;status&apos;]
+    print &quot;Test Time is: &quot; + str(args[&apos;elapsedtime&apos;])
+
+def log_message(self, message):
+    print message[&apos;timestamp&apos;] + &quot; :   &quot; + message[&apos;level&apos;] + &quot; : &quot; + message[&apos;message&apos;]
+</code></pre><p>‘’’<br>OK，然后自己在命令行调用的时候，参数中带上这个类就可以啦！</p>
+<h1 id="使用自己的监听类，运行case"><a href="#使用自己的监听类，运行case" class="headerlink" title="使用自己的监听类，运行case"></a>使用自己的监听类，运行case</h1><p>如：{WORKSPACE}是项目所在目录，刚才的监听类保存在{WORKSPACE}/RobotListener.py，要运行的case保存在{WORKSPACE}\TestCase下<br>就像这样，进入项目所在目录，根据你自己的项目路径，对下面的命令稍作修改，即可执行：<br>‘’’<br>cd {WORKSPACE}<br>/usr/local/Cellar/python/3.6.4_3/bin/python -m robot.run  \<br>–listener RobotListener.py  \<br>–pythonpath {YOUR_PYTHON_PATH}   \<br>{WORKSPACE}\TestCase<br>‘’’<br>结果如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/9701136-fe0e1cf55ad3549f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="test_log.jpg"></p>
+<p>可以看到，这样在Console窗口就出现了我们想要的log了，和命令行日志一起展现出来。<br>下面还可以保存到文件，进行二次处理等，就不是什么难事了。</p>
 
       
     </div>
@@ -447,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/04/automation-50tips-ch4/" rel="next" title="自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）">
-                <i class="fa fa-chevron-left"></i> 自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）
+              <a href="/2018/06/19/selenium-selenide-katalon/" rel="next" title="自动化测试工具知多少之——Selenium, Selenide和Katalon">
+                <i class="fa fa-chevron-left"></i> 自动化测试工具知多少之——Selenium, Selenide和Katalon
               </a>
             
           </div>
@@ -456,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/11/关于输出/" rel="prev" title="关于输出">
-                关于输出 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-写的测试要让非自动化工程师也能看懂"><span class="nav-number">1.</span> <span class="nav-text">1. 写的测试要让非自动化工程师也能看懂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-避免无必要的优化"><span class="nav-number">2.</span> <span class="nav-text">2. 避免无必要的优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-经常审查别人的代码"><span class="nav-number">3.</span> <span class="nav-text">3. 经常审查别人的代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找log来源"><span class="nav-number">2.</span> <span class="nav-text">查找log来源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重写监听类"><span class="nav-number">3.</span> <span class="nav-text">重写监听类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用自己的监听类，运行case"><span class="nav-number">4.</span> <span class="nav-text">使用自己的监听类，运行case</span></a></li></ol></div>
             
 
           </div>
