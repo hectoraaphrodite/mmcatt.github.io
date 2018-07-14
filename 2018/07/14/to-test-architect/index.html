@@ -102,27 +102,25 @@
 
 
 
-  <meta name="description" content="翻译整理自Dorothy Graham 和 Mark Fewster的文章That’s no Reason To Automate, 发表在Better Software, July/August 2009. 并非全文翻译，只是根据自己的理解，提炼整理了文中的相关观点。 发现更多bug 目标背后的好想法 测试应该发现bug，所以自动化测试应该更快的发现它们 因为测试可以执行的更快，所以我们可以执行">
-<meta name="keywords" content="自动化,测试">
+  <meta name="description" content="目前，关于软件测试有各种各样的书籍，有讲工具用法的，有讲职业发展的，还有讲方法论的，……林林总总，令人眼花缭乱。所以我就想啊，如果能够在自己看书的时候，对书中的内容以及实用性做个笔记，或许能够帮助同行小伙伴们去挑选书籍。以前也零散的在各行业微信群，或者自己的笔记本中，发表过自己对所阅读书籍的只言片语，但是未经整理。所以在博客上新开一栏，系统整理一下自己的读书笔记。 本文中的出现的小标题并非原书章节">
+<meta name="keywords" content="测试,架构师">
 <meta property="og:type" content="article">
-<meta property="og:title" content="错误的自动化测试目标 VS 建议目标">
-<meta property="og:url" content="http://yoursite.com/2018/05/03/wrong-automation-reason/index.html">
+<meta property="og:title" content="读《测试架构师修炼之道》 -- 概览">
+<meta property="og:url" content="http://yoursite.com/2018/07/14/to-test-architect/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
-<meta property="og:description" content="翻译整理自Dorothy Graham 和 Mark Fewster的文章That’s no Reason To Automate, 发表在Better Software, July/August 2009. 并非全文翻译，只是根据自己的理解，提炼整理了文中的相关观点。 发现更多bug 目标背后的好想法 测试应该发现bug，所以自动化测试应该更快的发现它们 因为测试可以执行的更快，所以我们可以执行">
+<meta property="og:description" content="目前，关于软件测试有各种各样的书籍，有讲工具用法的，有讲职业发展的，还有讲方法论的，……林林总总，令人眼花缭乱。所以我就想啊，如果能够在自己看书的时候，对书中的内容以及实用性做个笔记，或许能够帮助同行小伙伴们去挑选书籍。以前也零散的在各行业微信群，或者自己的笔记本中，发表过自己对所阅读书籍的只言片语，但是未经整理。所以在博客上新开一栏，系统整理一下自己的读书笔记。 本文中的出现的小标题并非原书章节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-7cd0a2a67bf22ced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-03T04:01:34.797Z">
+<meta property="og:updated_time" content="2018-07-14T05:11:22.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="错误的自动化测试目标 VS 建议目标">
-<meta name="twitter:description" content="翻译整理自Dorothy Graham 和 Mark Fewster的文章That’s no Reason To Automate, 发表在Better Software, July/August 2009. 并非全文翻译，只是根据自己的理解，提炼整理了文中的相关观点。 发现更多bug 目标背后的好想法 测试应该发现bug，所以自动化测试应该更快的发现它们 因为测试可以执行的更快，所以我们可以执行">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9701136-7cd0a2a67bf22ced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="读《测试架构师修炼之道》 -- 概览">
+<meta name="twitter:description" content="目前，关于软件测试有各种各样的书籍，有讲工具用法的，有讲职业发展的，还有讲方法论的，……林林总总，令人眼花缭乱。所以我就想啊，如果能够在自己看书的时候，对书中的内容以及实用性做个笔记，或许能够帮助同行小伙伴们去挑选书籍。以前也零散的在各行业微信群，或者自己的笔记本中，发表过自己对所阅读书籍的只言片语，但是未经整理。所以在博客上新开一栏，系统整理一下自己的读书笔记。 本文中的出现的小标题并非原书章节">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/03/wrong-automation-reason/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/14/to-test-architect/"/>
 
 
 
@@ -132,7 +130,7 @@
   };
 </script>
 
-  <title>错误的自动化测试目标 VS 建议目标 | Cynthia Wang</title>
+  <title>读《测试架构师修炼之道》 -- 概览 | Cynthia Wang</title>
   
 
 
@@ -304,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/wrong-automation-reason/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/14/to-test-architect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cynthia Wang">
@@ -321,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">错误的自动化测试目标 VS 建议目标
+          <h1 class="post-title" itemprop="name headline">读《测试架构师修炼之道》 -- 概览
               
             
           </h1>
@@ -346,7 +344,7 @@
                 
               
 
-              <time title="创建时间：2018-05-03 11:55:43 / 修改时间：12:01:34" itemprop="dateCreated datePublished" datetime="2018-05-03T11:55:43+08:00">2018-05-03</time>
+              <time title="创建时间：2018-07-14 11:20:12 / 修改时间：13:11:22" itemprop="dateCreated datePublished" datetime="2018-07-14T11:20:12+08:00">2018-07-14</time>
             
 
             
@@ -368,7 +366,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/automation/" itemprop="url" rel="index"><span itemprop="name">automation</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/reading/" itemprop="url" rel="index"><span itemprop="name">reading</span></a></span>
 
                 
                 
@@ -402,107 +400,14 @@
       
 
       
-        <p>翻译整理自Dorothy Graham 和 Mark Fewster的文章<br>That’s no Reason To Automate, 发表在Better Software, July/August 2009.</p>
-<p>并非全文翻译，只是根据自己的理解，提炼整理了文中的相关观点。</p>
-<h1 id="发现更多bug"><a href="#发现更多bug" class="headerlink" title="发现更多bug"></a>发现更多bug</h1><ul>
-<li>目标背后的好想法<ul>
-<li>测试应该发现bug，所以自动化测试应该更快的发现它们</li>
-<li>因为测试可以执行的更快，所以我们可以执行更多测试，发现更多bug</li>
-<li>我们可以对系统测试更多，所以我们应该在那些不能执行手工测试的部分发现更多bug</li>
-</ul>
-</li>
-<li>测试质量决定是否发现bug</li>
-<li>如果最初进行的是手工测试，发现的bug应当被修复</li>
-<li>重复旧测试并不能比进行新测试发现更多bug</li>
-<li>更好的目标<ul>
-<li>帮助测试人员发现更多的回归bug<h1 id="在夜间和周末运行回归测试"><a href="#在夜间和周末运行回归测试" class="headerlink" title="在夜间和周末运行回归测试"></a>在夜间和周末运行回归测试</h1></li>
-</ul>
-</li>
-<li>目标背后的好想法<ul>
-<li>我们有未利用的资源（夜晚和周末）</li>
-<li>我们应该在睡觉的时候执行自动化</li>
-</ul>
-</li>
-<li>要达到这个目标太简单了，只要运行测试，而不管他是否值得运行</li>
-<li>可以运行更多的自动化测试，但你需要证明需这些测试执行是有用的</li>
-<li>衡量的方法之一是对所有的自动化测试，估算对应手工执行的时间，并进行衡量</li>
-<li>更好的目标<ul>
-<li>利用未充分利用的计算机资源，运行最重要的或最有用的测试<h1 id="减少测试人员"><a href="#减少测试人员" class="headerlink" title="减少测试人员"></a>减少测试人员</h1></li>
-</ul>
-</li>
-<li>目标背后的好想法<ul>
-<li>我们花钱在工具上了，所以应该在别处节省回来<br>我们想消减总的开支，而人员的开支比较高</li>
-</ul>
-</li>
-<li>很多manager会持这个观点</li>
-<li>当自动化引入，实际上很少出现减员</li>
-<li>相反，需要更多拥有测试脚本开发能力的人员</li>
-<li>自动化支持测试活动，而不是篡权</li>
-<li>自动化测试不等于全自动测试，需要人力开发脚本，分析测试结果，维护测试套件</li>
-<li>自动化可以提高测试执行的效率，但需要测试人员保证测试本身有效</li>
-<li>这个目的是管理的目标,不是一个适合自动化的目标</li>
-<li>更好的管理目标是确保每个人都是他们擅长执行任务。这不是一个自动化的目标,也不是降低测试成本。</li>
-<li>它可能是有效目标，但它是关于管理的，与自动化无关。</li>
-<li>更好的目标<ul>
-<li>总的自动化测试成本，必须显著低于被自动化测试所节省的总测试成本</li>
-<li>这可能部分的被以下指标所衡量：帮助人们每小时所提高的测试运行数或覆盖范围</li>
-<li>（这段我翻译的太拗口，大家看原文去吧）<h1 id="缩短测试时间"><a href="#缩短测试时间" class="headerlink" title="缩短测试时间"></a>缩短测试时间</h1></li>
-</ul>
-</li>
-<li>目标背后的好想法<ul>
-<li>减少截止日期压力——任何可以节省时间的方式都是好的</li>
-<li>测试是瓶颈，所以更快的测试会所有帮助</li>
-<li>我们想更快的将产品发布上市</li>
-</ul>
-</li>
-<li>这是个很危险的目标，它混淆了“测试”和“测试执行”，所以也会产生问题</li>
-<li>问题1：有很多容易的方法来达成目标：运行较短时间的测试，忽略长时间的测试，或者剪掉回归测试</li>
-<li>问题2：缩短测试时间，很容易给人一种缩短总体测试时间的错觉：而自动化工具专注于测试执行，并不是整个测试过程</li>
-<li>问题3：实际上，除了测试执行时间，还有很多因素会影响整体测试时间：自动化测试的设置和复位，确认缺陷并识别错误之处。手工测试时，你知道发现bug的上下文信息；而自动化测试只会告诉你差异之处，分析人员必须结合上下文信息，确认是否为真正的bug</li>
-<li>导致测试时间增加的重要因素是软件的质量，这取决于开发人员，而不是手工或自动化测试人员</li>
-<li>考虑维护成本：可能在第一个版本满足了目标，但是在接下来的版本中变的更糟</li>
-<li>更好的目标<ul>
-<li>对于工具所支持的测试活动，减少花费在它上面的时间</li>
-<li>这对自动化来说是一个持续的目标，去改善手动和现有自动化测试。</li>
-<li>它可以通过计算指定测试活动的时间，进行衡量。<h1 id="进行更多测试——重要的是质量而不是数量"><a href="#进行更多测试——重要的是质量而不是数量" class="headerlink" title="进行更多测试——重要的是质量而不是数量"></a>进行更多测试——重要的是质量而不是数量</h1></li>
-</ul>
-</li>
-<li>目标背后的好想法<ul>
-<li>对软件测得越多，就覆盖的越多</li>
-<li>测试是好的，所以更多的测试更好</li>
-</ul>
-</li>
-<li>好的测试不等于运行的测试数量，而是和所运行测试的价值有关</li>
-<li>自动化许多坏的测试，只能带来维护开销和少量回报</li>
-<li>自动化最好的测试，才能在时间和金钱方面带来价值、</li>
-<li>先从重要的部分开始自动化，当我们开始执行测试，会发现不同于计划部分的另外的测试需要进行自动化。自动化需要能够在方向上进行调整，而不必每次都从头开始</li>
-<li>自动化测试期间，开始可能需要较长的时间（相比手工时间）去自动化一个测试，因此可能导致短期内会运行较少的测试</li>
-<li>更好的目标<ul>
-<li>对于最有用和最有价值的测试，自动化最适宜的数量</li>
-<li>可以用最有价值的测试部分的自动化率进行衡量<h1 id="自动执行x-的测试"><a href="#自动执行x-的测试" class="headerlink" title="自动执行x%的测试"></a>自动执行x%的测试</h1></li>
-</ul>
-</li>
-<li>目标背后的好想法<ul>
-<li>需要衡量自动化工作的进展</li>
-<li>需要衡量自动化的质量</li>
-</ul>
-</li>
-<li>更重要和基础的要点是，去了解目前的测试质量，而不是已经做了多少自动化</li>
-<li>如果是些没什么用的坏测试，自动化它们也没什么用（只是执行的更快了）</li>
-<li>“Automated chaos is just faster chaos.”  </li>
-<li>如果目标是自动化50%的测试，是否自动化了正确的50%呢</li>
-<li>多少比例的测试应当被自动化？首先要排除这样的测试：那些实际上不可能，或者完全不切实际的自动化。</li>
-<li>自动化提供了支持测试的工具，不应当简单的自动化测试。</li>
-<li>更好的目标<ol>
-<li>自动化应当为测试提供有价值的支持</li>
-<li>可以这样衡量：测试人员有多经常使用自动化人员提供的内容，包括执行自动化测试和其他支持。</li>
-<li>通过自动化，增加了无需手工验证的数量<h1 id="你的自动化测试目标是什么？它们是好的目标吗？"><a href="#你的自动化测试目标是什么？它们是好的目标吗？" class="headerlink" title="你的自动化测试目标是什么？它们是好的目标吗？"></a>你的自动化测试目标是什么？它们是好的目标吗？</h1></li>
-</ol>
-</li>
-<li>不要把测试目标和自动化目标混为一谈</li>
-<li>选择更为合适的目标，并且衡量你实现的程度，这样你就能看出你的自动化成果是怎样使公司受益的</li>
-</ul>
-<p>下面附上相应的思维导图<br><img src="https://upload-images.jianshu.io/upload_images/9701136-7cd0a2a67bf22ced.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="错误的自动化测试目标.png"></p>
+        <p>目前，关于软件测试有各种各样的书籍，有讲工具用法的，有讲职业发展的，还有讲方法论的，……林林总总，令人眼花缭乱。<br>所以我就想啊，如果能够在自己看书的时候，对书中的内容以及实用性做个笔记，或许能够帮助同行小伙伴们去挑选书籍。<br>以前也零散的在各行业微信群，或者自己的笔记本中，发表过自己对所阅读书籍的只言片语，但是未经整理。所以在博客上新开一栏，系统整理一下自己的读书笔记。</p>
+<p>本文中的出现的小标题并非原书章节标题，而是我对内容二次提炼后，作为本读书笔记的小标题出现，特此说明。</p>
+<h1 id="《测试架构师修炼之道》"><a href="#《测试架构师修炼之道》" class="headerlink" title="《测试架构师修炼之道》"></a>《测试架构师修炼之道》</h1><p>作者 刘琛梅<br>购买渠道： 京东等各大电商有售</p>
+<h2 id="第一部分-软件测试职业解惑"><a href="#第一部分-软件测试职业解惑" class="headerlink" title="第一部分 软件测试职业解惑"></a>第一部分 软件测试职业解惑</h2><p>本书第一部分对软件测试工程的职业规划进行了阐述。梳理了软件测试的发展史，并且对软件测试这一职位在管理和技术上的发展，以及创业的方向，均给出了一些说明。<br>根据我自己的经验，经常在各种测试群中，看到入行1-3年的小伙伴频频怀疑自己的价值，这个职位的价值。例如觉得测试很low不受公司重视，总觉得自己就是背锅的，询问是否需要转行。对于这些小伙伴，建议去阅读一下本书的这部分内容，会让你对软件测试工程师的价值及定位，有一个比较清晰的理解，应该也会减轻你的迷茫。</p>
+<h2 id="第二部分-认识软件测试架构师"><a href="#第二部分-认识软件测试架构师" class="headerlink" title="第二部分 认识软件测试架构师"></a>第二部分 认识软件测试架构师</h2><p>本部分首先阐述了软件测试架构师作为测试团队的技术带头人，在工作中应该承担怎样的责任。在产品的各个阶段：需求分析，测试分析和设计，测试执行中，应该专注哪些事情，有怎样的工作成果输出。并进行了进一步的延伸：测试架构师的思考方式，软件测试经理和系统架构师为什么不能代替软件测试架构师。<br>接下来详细描述了这一岗位所需的硬技能和软技能。硬技能也就是专业知识能力，软技能则是指沟通能力，文档写作能力等通用能力。<br>硬技能部分，主要讲了如何理解软件产品质量模型，测试类型和方法，测试设计技术，并把”探索式测试”和”自动化测试”作为单独的小节拎出来详细介绍。因为”探索式测试”是和人本身密切相关，需要测试者本身拥有良好的测试思维，才能做好的一件事情；而”自动化测试”则无需多做介绍，是目前深受人们关注的一种测试技术。</p>
+<h2 id="第三部分-如何修炼核心技能"><a href="#第三部分-如何修炼核心技能" class="headerlink" title="第三部分 如何修炼核心技能"></a>第三部分 如何修炼核心技能</h2><p>这部分在第二部分的基础上，讲述了在修炼成为测试架构师的道路上，应该如何制定好测试策略，并给出了对应的实战攻略。最后，则对版本测试策略和产品质量评估做了说明。<br>要注意的是，虽然这部分有测试策略的实战攻略，但还是偏理论和方法居多，并没有结合十分具体的项目来说明，所以阅读者如果在工作中没有一定的实战经验，阅读起来或许比较吃力。而对于有经验的读者，则可以参考书上的理论，复盘自己曾经做过的项目，查缺补漏，并开始计划下次项目或者版本迭代时，可以改进的点。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>个人感觉，对于初入行或者工作经验不足，没有完整接触过整个项目测试流程的小伙伴来说，阅读本书第一部分和第二部分就足够了。而对于有一定工作经验的小伙伴，则可以详细、反复阅读本书第三部分，在工作实战中不断的总结、复盘、优化迭代，一步步迈向测试架构师！</p>
+<h2 id="整理：本书中提到的一些参考书"><a href="#整理：本书中提到的一些参考书" class="headerlink" title="整理：本书中提到的一些参考书"></a>整理：本书中提到的一些参考书</h2><p>1975年，John Good Enough和Susan Cerhart, IEEE,《 软件数据选择的原理》<br>1979年，Glenford J.Myers,《 软件测试艺术》<br>1983年，Bill Hetzel,《 软件测试完全指南》<br>2002年，Rick和Stefan,《 系统的软件测试》<br>Marine L.Hutcheson, Software Testing Fundamentals： Methods and Metries（ 《 软件测试基础： 方法与度量》 ）<br>Dave Hendrichson, 12 Essential Skills for Software Architects（ 《 软件架构师的12项修炼》 张菲译， 机械工业出版社出版）</p>
 
       
     </div>
@@ -523,9 +428,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/自动化/" rel="tag"># 自动化</a>
-          
             <a href="/tags/测试/" rel="tag"># 测试</a>
+          
+            <a href="/tags/架构师/" rel="tag"># 架构师</a>
           
         </div>
       
@@ -538,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/03/automation-50tips-ch3/" rel="next" title="自动化测试人员需要知道的50件事（第三章 环境）">
-                <i class="fa fa-chevron-left"></i> 自动化测试人员需要知道的50件事（第三章 环境）
+              <a href="/2018/07/13/rf-output-log/" rel="next" title="RobotFramework二次开发之--输出Message Log">
+                <i class="fa fa-chevron-left"></i> RobotFramework二次开发之--输出Message Log
               </a>
             
           </div>
@@ -547,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/04/automation-50tips-ch4/" rel="prev" title="自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证）">
-                自动化测试人员需要知道的50件事（第四章 运行，记录日志，验证） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -709,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#发现更多bug"><span class="nav-number">1.</span> <span class="nav-text">发现更多bug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在夜间和周末运行回归测试"><span class="nav-number">2.</span> <span class="nav-text">在夜间和周末运行回归测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少测试人员"><span class="nav-number">3.</span> <span class="nav-text">减少测试人员</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缩短测试时间"><span class="nav-number">4.</span> <span class="nav-text">缩短测试时间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进行更多测试——重要的是质量而不是数量"><span class="nav-number">5.</span> <span class="nav-text">进行更多测试——重要的是质量而不是数量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动执行x-的测试"><span class="nav-number">6.</span> <span class="nav-text">自动执行x%的测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#你的自动化测试目标是什么？它们是好的目标吗？"><span class="nav-number">7.</span> <span class="nav-text">你的自动化测试目标是什么？它们是好的目标吗？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#《测试架构师修炼之道》"><span class="nav-number">1.</span> <span class="nav-text">《测试架构师修炼之道》</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一部分-软件测试职业解惑"><span class="nav-number">1.1.</span> <span class="nav-text">第一部分 软件测试职业解惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分-认识软件测试架构师"><span class="nav-number">1.2.</span> <span class="nav-text">第二部分 认识软件测试架构师</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分-如何修炼核心技能"><span class="nav-number">1.3.</span> <span class="nav-text">第三部分 如何修炼核心技能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整理：本书中提到的一些参考书"><span class="nav-number">1.5.</span> <span class="nav-text">整理：本书中提到的一些参考书</span></a></li></ol></li></ol></div>
             
 
           </div>
