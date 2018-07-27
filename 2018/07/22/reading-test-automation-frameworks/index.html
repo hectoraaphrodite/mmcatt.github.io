@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="原书链接在此：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm">
+  <meta name="description" content="某地儿见到别人推荐的讲自动化测试框架的书，虽然老了点儿，但是基本原理啥的讲的清清楚楚明明白白，所以读之。原书链接在此，只有英文版，只有电子版：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm 这就是个读书笔记，想好好理解的话还是去看原文。部分标题，我自己给出了不大顺溜的翻译，请以原文为准。   1">
 <meta name="keywords" content="理论,体系,自动化，测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读 Test Automation Frameworks">
 <meta property="og:url" content="http://yoursite.com/2018/07/22/reading-test-automation-frameworks/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
-<meta property="og:description" content="原书链接在此：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm">
+<meta property="og:description" content="某地儿见到别人推荐的讲自动化测试框架的书，虽然老了点儿，但是基本原理啥的讲的清清楚楚明明白白，所以读之。原书链接在此，只有英文版，只有电子版：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm 这就是个读书笔记，想好好理解的话还是去看原文。部分标题，我自己给出了不大顺溜的翻译，请以原文为准。   1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-22T08:32:36.360Z">
+<meta property="og:updated_time" content="2018-07-23T00:02:02.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读 Test Automation Frameworks">
-<meta name="twitter:description" content="原书链接在此：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm">
+<meta name="twitter:description" content="某地儿见到别人推荐的讲自动化测试框架的书，虽然老了点儿，但是基本原理啥的讲的清清楚楚明明白白，所以读之。原书链接在此，只有英文版，只有电子版：http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm 这就是个读书笔记，想好好理解的话还是去看原文。部分标题，我自己给出了不大顺溜的翻译，请以原文为准。   1">
 
 
 
@@ -344,12 +344,24 @@
                 
               
 
-              <time title="创建时间：2018-07-22 16:31:29 / 修改时间：16:32:36" itemprop="dateCreated datePublished" datetime="2018-07-22T16:31:29+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-22 16:31:29" itemprop="dateCreated datePublished" datetime="2018-07-22T16:31:29+08:00">2018-07-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-23 08:02:02" itemprop="dateModified" datetime="2018-07-23T08:02:02+08:00">2018-07-23</time>
               
             
           </span>
@@ -400,8 +412,71 @@
       
 
       
-        <p>原书链接在此：<br><a href="http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm" target="_blank" rel="noopener">http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm</a></p>
-
+        <p>某地儿见到别人推荐的讲自动化测试框架的书，虽然老了点儿，但是基本原理啥的讲的清清楚楚明明白白，所以读之。<br>原书链接在此，只有英文版，只有电子版：<br><a href="http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm" target="_blank" rel="noopener">http://safsdev.sourceforge.net/FRAMESDataDrivenTestAutomationFrameworks.htm</a></p>
+<p>这就是个读书笔记，想好好理解的话还是去看原文。部分标题，我自己给出了不大顺溜的翻译，请以原文为准。  </p>
+<h2 id="1-1-Thinking-Past-“The-Project”-思考不要局限在一个项目上）"><a href="#1-1-Thinking-Past-“The-Project”-思考不要局限在一个项目上）" class="headerlink" title="1.1 Thinking Past “The Project” (思考不要局限在一个项目上）"></a>1.1 Thinking Past “The Project” (思考不要局限在一个项目上）</h2><p>不能指望来一个项目，就对应的做一个自动化测试框架，需要开发一个独立与项目之上的框架。  </p>
+<h4 id="1-1-1-Problems-With-Test-Automation-A-CASE-STUDY"><a href="#1-1-1-Problems-With-Test-Automation-A-CASE-STUDY" class="headerlink" title="1.1.1    Problems With Test Automation. A CASE STUDY"></a>1.1.1    Problems With Test Automation. A CASE STUDY</h4><p>讲了一个失败的例子。<br>有个大公司1996年开始评估自动化工具，并在1998年购买了一款商用自动化工具投入使用。<br>该公司的项目都是独立运作的，所以自动化项目也是独立的，因此每个项目有各自的脚本，各项目也各自写了自己项目的公共库，等。<br>而当各项目的程序有变化时，脚本需要维护；自动化工具升级时，可能会造成脚本失败，就需要维护甚至降级自动化工具。<br>无休止的这种维护支出，最终导致了自动化项目的被搁浅。</p>
+<h4 id="1-1-2-Some-Test-Strategy-Guidelines"><a href="#1-1-2-Some-Test-Strategy-Guidelines" class="headerlink" title="1.1.2 Some Test Strategy Guidelines"></a>1.1.2 Some Test Strategy Guidelines</h4><p>教训：必须开发可重用的测试策略。</p>
+<ul>
+<li>Test automation is a fulltime effort, not a sideline.</li>
+<li>The test design and the test framework are totally separate entities.</li>
+<li>The test framework should be application-independent.</li>
+<li>The test framework must be easy to expand, maintain, and perpetuate.</li>
+<li>The test strategy/design vocabulary should be framework independent.</li>
+<li>The test strategy/design should remove most testers from the complexities of the test framework.</li>
+</ul>
+<h2 id="1-2-Data-Driven-Automation-Frameworks（数据驱动自动化框架）"><a href="#1-2-Data-Driven-Automation-Frameworks（数据驱动自动化框架）" class="headerlink" title="1.2 Data Driven Automation Frameworks（数据驱动自动化框架）"></a>1.2 Data Driven Automation Frameworks（数据驱动自动化框架）</h2><h4 id="1-2-1-Data-Driven-Scripts"><a href="#1-2-1-Data-Driven-Scripts" class="headerlink" title="1.2.1    Data Driven Scripts."></a>1.2.1    Data Driven Scripts.</h4><p>依靠数据驱动脚本的测试自动化框架，是最容易和最快执行的，如果有技术人员来持续维护的话。<br>但维护它是比较困难的，经常会导致长期的失败。  </p>
+<h4 id="1-2-2-Keyword-or-Table-Driven-Test-Automation"><a href="#1-2-2-Keyword-or-Table-Driven-Test-Automation" class="headerlink" title="1.2.2 Keyword or Table Driven Test Automation"></a>1.2.2 Keyword or Table Driven Test Automation</h4><p>至今为止的讨论表明，关键字驱动的测试自动化是比较理想的自动化框架。有时也称之为”表格驱动”测试自动化。  </p>
+<p><strong>Action, Input Data, and Expected Result ALL in One Record:</strong><br>例如，验证登录页面上的用户名，我们可能有如下数据表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">WINDOW</th>
+<th style="text-align:center">COMPONENT</th>
+<th style="text-align:center">ACTION</th>
+<th style="text-align:center">EXPECTED VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LoginPage</td>
+<td style="text-align:center">UserIDTextbox</td>
+<td style="text-align:center">VerifyValue</td>
+<td style="text-align:center">“MyUseID”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reusable Code, Error Correction and Synchronization:</strong>  </p>
+<p>开发应用独立的组件功能，接受特定应用程序的变量数据。一旦组件功能存在，使用框架就可以在每一个被测的应用程序上进行应用。</p>
+<p>在我们的设计中,主循环从数据表中读取记录,执行一些高层验证,关注适当的对象,然后使用适当的组件功能，处理完整的表格记录。组件功能负责确定什么动作是被请求的,并基于动作进一步完成表格记录。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Framework Pseudo-Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Primary Record Processor Module:</strong> <br><br>Verify “LoginPage” Exists. (Attempt recovery if not)<br>Set focus to “LoginPage<br>Verify “UserIDTextbox” Exists. (Attempt recovery if not)<br>Find “Type” of component “UserIDTextbox”. (It is a Textbox)<br>Call the module that processes ALL Textbox components.<br><br><strong>Textbox Component Module:</strong><br><br>Validate the action keyword “VerifyValue”.<br>Call the Textbox.VerifyValue function.<br><br><strong>Textbox.VerifyValue Function:</strong><br><br>Get the text stored in the “UserIDTextbox” Textbox.<br>Compare the retrieved text to “MyUserID”.<br>Record our success or failure.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Test Design for Man and Machine, With or Without the Application:</strong></p>
+<p>人类测试员会这样理解并操作该表中的指令：<br>On the LoginPage, in the UserIDTextbox,<br>Verify the Value is “MyUserID”.<br>该表中的测试记录可以被一个人完全理解和执行，但是自动化框架对此一无所知，直到我们提供了额外的信息。这部分内容，我们将在讨论程序映射时进行学习。</p>
+<p><strong>Findings:</strong><br>关键字驱动自动化框架，最初需要的投入比较大，但是这个初始投资是一次性的。一旦到位，关键字驱动自动化，即拥有了数据驱动框架的易用性，在后期的维护和长期使用上也拥有最大的潜力。</p>
+<h4 id="1-2-3-Hybrid-Test-Automation-or-“All-of-the-Above”"><a href="#1-2-3-Hybrid-Test-Automation-or-“All-of-the-Above”" class="headerlink" title="1.2.3    Hybrid Test Automation (or, “All of the Above”)"></a>1.2.3    Hybrid Test Automation (or, “All of the Above”)</h4><p>最成功的自动化框架通常适应关键字驱动测试以及数据驱动脚本。这允许数据驱动脚本利用强大的库和工具,通常伴随着一个关键字驱动架构。</p>
+<h4 id="1-2-4-Commercial-Keyword-Driven-Frameworks"><a href="#1-2-4-Commercial-Keyword-Driven-Frameworks" class="headerlink" title="1.2.4    Commercial Keyword Driven Frameworks"></a>1.2.4    Commercial Keyword Driven Frameworks</h4><p>这部分说的内容有点儿老，跳过。目前主流的是一些这里没提到的开源工具。</p>
+<h2 id="1-3-Keyword-Driven-Automation-Framework-Model"><a href="#1-3-Keyword-Driven-Automation-Framework-Model" class="headerlink" title="1.3 Keyword Driven Automation Framework Model"></a>1.3 Keyword Driven Automation Framework Model</h2><p>以下自动化框架模型，花费了超过18个月来进行规划、设计、编码，以及一些试验和错误。当然，算工作量的话只需要1个人，3个月。<br>该模型着重于实现一个关键字驱动自动化框架。它不包含任何额外的功能,如跟踪需求或提供自动化测试结果之间的可跟踪性和任何其他功能的测试过程。它仅仅提供了一个模型,一个关键字驱动的自动化测试执行引擎。  </p>
+<h4 id="1-3-1-Project-Guidelines"><a href="#1-3-1-Project-Guidelines" class="headerlink" title="1.3.1    Project Guidelines"></a>1.3.1    Project Guidelines</h4><p>项目是非正式地遵循以下指导原则或实践任务:</p>
+<ul>
+<li>实现一个测试策略,允许合理直观的测试开发和执行手动和自动化框架。</li>
+<li>测试策略将允许每个测试步骤执行,要使用的输入数据和预期的结果一起在同一行或输入源的记录。</li>
+<li>实现一个框架,将整合关键字驱动测试和传统的脚本,让受益于实现。</li>
+<li>实现框架是完全独立于应用程序,因为它需要测试至少4或5个不同的应用程序部署。</li>
+<li>该框架将全面记录和发布。</li>
+<li>框架将公开共享的内部网其他人使用和最终(但愿)共同开发。</li>
+</ul>
+<h4 id="1-3-2-Code-and-Documentation-Standards"><a href="#1-3-2-Code-and-Documentation-Standards" class="headerlink" title="1.3.2    Code and Documentation Standards"></a>1.3.2    Code and Documentation Standards</h4><h2 id="1-4-Automation-Framework-Workflow"><a href="#1-4-Automation-Framework-Workflow" class="headerlink" title="1.4 Automation Framework Workflow"></a>1.4 Automation Framework Workflow</h2><h2 id="1-5-Summary"><a href="#1-5-Summary" class="headerlink" title="1.5 Summary"></a>1.5 Summary</h2>
       
     </div>
 
@@ -447,6 +522,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/27/links/" rel="prev" title="整理一波技术博客、网站">
+                整理一波技术博客、网站 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -500,8 +579,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -520,7 +608,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -592,6 +680,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Thinking-Past-“The-Project”-思考不要局限在一个项目上）"><span class="nav-number">1.</span> <span class="nav-text">1.1 Thinking Past “The Project” (思考不要局限在一个项目上）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-Problems-With-Test-Automation-A-CASE-STUDY"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1.1    Problems With Test Automation. A CASE STUDY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-Some-Test-Strategy-Guidelines"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.1.2 Some Test Strategy Guidelines</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Data-Driven-Automation-Frameworks（数据驱动自动化框架）"><span class="nav-number">2.</span> <span class="nav-text">1.2 Data Driven Automation Frameworks（数据驱动自动化框架）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-Data-Driven-Scripts"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.2.1    Data Driven Scripts.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-Keyword-or-Table-Driven-Test-Automation"><span class="nav-number">2.0.2.</span> <span class="nav-text">1.2.2 Keyword or Table Driven Test Automation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-Hybrid-Test-Automation-or-“All-of-the-Above”"><span class="nav-number">2.0.3.</span> <span class="nav-text">1.2.3    Hybrid Test Automation (or, “All of the Above”)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-Commercial-Keyword-Driven-Frameworks"><span class="nav-number">2.0.4.</span> <span class="nav-text">1.2.4    Commercial Keyword Driven Frameworks</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Keyword-Driven-Automation-Framework-Model"><span class="nav-number">3.</span> <span class="nav-text">1.3 Keyword Driven Automation Framework Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-Project-Guidelines"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.3.1    Project Guidelines</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-Code-and-Documentation-Standards"><span class="nav-number">3.0.2.</span> <span class="nav-text">1.3.2    Code and Documentation Standards</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Automation-Framework-Workflow"><span class="nav-number">4.</span> <span class="nav-text">1.4 Automation Framework Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Summary"><span class="nav-number">5.</span> <span class="nav-text">1.5 Summary</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
