@@ -102,28 +102,25 @@
 
 
 
-  <meta name="description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
-<meta name="keywords" content="测试,自动化">
+  <meta name="description" content="这是我购买的”极客时间”上的一套课程的笔记，总共52讲，定期对其中的内容做一笔记，巩固学习内容。 11 互联网产品的测试策略应该如何设计？互联网产品和传统软件产品的不同互联网产品”快”，发布周期通常以”天”甚至是”小时”为单位。传统软件产品”慢”，发布周期多以”月”甚至以”年”为单位。 由于发布周期的巨大差异，二者的测试策略必然在测试执行时间和测试执行环境上有巨大差异。 有效缩短测试执行时间的方法">
+<meta name="keywords" content="测试,理论,体系">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RobotFramework二次开发之--输出Message Log">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/rf-output-log/index.html">
+<meta property="og:title" content="软件测试52讲笔记--11 互联网产品的测试策略应该如何设计？">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/52notes-11/index.html">
 <meta property="og:site_name" content="Cynthia Wang">
-<meta property="og:description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
+<meta property="og:description" content="这是我购买的”极客时间”上的一套课程的笔记，总共52讲，定期对其中的内容做一笔记，巩固学习内容。 11 互联网产品的测试策略应该如何设计？互联网产品和传统软件产品的不同互联网产品”快”，发布周期通常以”天”甚至是”小时”为单位。传统软件产品”慢”，发布周期多以”月”甚至以”年”为单位。 由于发布周期的巨大差异，二者的测试策略必然在测试执行时间和测试执行环境上有巨大差异。 有效缩短测试执行时间的方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9701136-fe0e1cf55ad3549f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-13T03:17:03.064Z">
+<meta property="og:updated_time" content="2018-07-28T05:14:44.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RobotFramework二次开发之--输出Message Log">
-<meta name="twitter:description" content="起因因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。  不了解RED的，可以戳官网:http://nokia.github.io/RED/help/可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。  而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="软件测试52讲笔记--11 互联网产品的测试策略应该如何设计？">
+<meta name="twitter:description" content="这是我购买的”极客时间”上的一套课程的笔记，总共52讲，定期对其中的内容做一笔记，巩固学习内容。 11 互联网产品的测试策略应该如何设计？互联网产品和传统软件产品的不同互联网产品”快”，发布周期通常以”天”甚至是”小时”为单位。传统软件产品”慢”，发布周期多以”月”甚至以”年”为单位。 由于发布周期的巨大差异，二者的测试策略必然在测试执行时间和测试执行环境上有巨大差异。 有效缩短测试执行时间的方法">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/13/rf-output-log/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/28/52notes-11/"/>
 
 
 
@@ -133,7 +130,7 @@
   };
 </script>
 
-  <title>RobotFramework二次开发之--输出Message Log | Cynthia Wang</title>
+  <title>软件测试52讲笔记--11 互联网产品的测试策略应该如何设计？ | Cynthia Wang</title>
   
 
 
@@ -305,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/rf-output-log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/28/52notes-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cynthia Wang">
@@ -322,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RobotFramework二次开发之--输出Message Log
+          <h1 class="post-title" itemprop="name headline">软件测试52讲笔记--11 互联网产品的测试策略应该如何设计？
               
             
           </h1>
@@ -347,7 +344,7 @@
                 
               
 
-              <time title="创建时间：2018-07-13 11:08:47 / 修改时间：11:17:03" itemprop="dateCreated datePublished" datetime="2018-07-13T11:08:47+08:00">2018-07-13</time>
+              <time title="创建时间：2018-07-28 12:36:29 / 修改时间：13:14:44" itemprop="dateCreated datePublished" datetime="2018-07-28T12:36:29+08:00">2018-07-28</time>
             
 
             
@@ -369,7 +366,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/automation/" itemprop="url" rel="index"><span itemprop="name">automation</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/reading/" itemprop="url" rel="index"><span itemprop="name">reading</span></a></span>
 
                 
                 
@@ -403,36 +400,41 @@
       
 
       
-        <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>因为自己用的是RED这个编辑器，发现每次跑完case之后，编辑器中Message Log一栏展示的log很赞，所以就想保存下来。</p>
-<blockquote>
-<p>不了解RED的，可以戳官网:<br><a href="http://nokia.github.io/RED/help/" target="_blank" rel="noopener">http://nokia.github.io/RED/help/</a><br>可以理解成RIDE的升级版，官方已经抛弃了RIDE的更新，使用了全新的RED作为替代。</p>
-</blockquote>
-<p>而我平常运行自动化测试case呢，是通过命令行的形式运行，并集成到Jenkins中，自动运行，不走RED，所以也不会看到这一栏啦。<br>于是就开始探索这部分log的来源。搜索了无数资料，发现一个有用的：<br><a href="https://blog.csdn.net/wyb199026/article/details/78730097" target="_blank" rel="noopener">https://blog.csdn.net/wyb199026/article/details/78730097</a><br>只是作者用的是RIDE，虽然原理上差不多，但是作为没有仔细研究过RF源码的我来说，还是花了点功夫的。<br>那么结合查找资料和自己的经验心得，我对log的理解如下：</p>
+        <p>这是我购买的”极客时间”上的一套课程的笔记，总共52讲，定期对其中的内容做一笔记，巩固学习内容。</p>
+<h1 id="11-互联网产品的测试策略应该如何设计？"><a href="#11-互联网产品的测试策略应该如何设计？" class="headerlink" title="11 互联网产品的测试策略应该如何设计？"></a>11 互联网产品的测试策略应该如何设计？</h1><h2 id="互联网产品和传统软件产品的不同"><a href="#互联网产品和传统软件产品的不同" class="headerlink" title="互联网产品和传统软件产品的不同"></a>互联网产品和传统软件产品的不同</h2><p>互联网产品”快”，发布周期通常以”天”甚至是”小时”为单位。<br>传统软件产品”慢”，发布周期多以”月”甚至以”年”为单位。</p>
+<p>由于发布周期的巨大差异，二者的测试策略必然在测试执行时间和测试执行环境上有巨大差异。</p>
+<p>有效缩短测试执行时间的方法</p>
+<ul>
+<li>引入测试的并发执行机制</li>
+<li>从测试策略上找到突破口</li>
+</ul>
+<h2 id="传统软件产品的测试策略设计"><a href="#传统软件产品的测试策略设计" class="headerlink" title="传统软件产品的测试策略设计"></a>传统软件产品的测试策略设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     |GUI Test|</span><br><span class="line">   /  API Test  \</span><br><span class="line">/    Unit Test     \</span><br></pre></td></tr></table></figure>
+<p>简单图示一下，差不多是一个金字塔形，底部厚，越向上越小。<br>这个模型在很长一段时间内都被认为是测试策略设计的最佳实践。</p>
 <ol>
-<li>运行时Console展示的日志。如果通过命令行运行，你可以在窗口看到这些日志。如果通过Jenkins启动任务，你可以在[Console Output]中看到这部分日志。如果和我一样用RED编辑器，你会在Console窗口看到这部分日志</li>
-<li>执行后得到的log.html文件，这个会自动输出文件的。</li>
-<li>RED编辑器的Message Log窗口展示的日志。如图所示。<br><img src="https://upload-images.jianshu.io/upload_images/9701136-f8d700779b0be9c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="messageLog.jpg"></li>
+<li>单元测试<br>属于白盒测试。通常由开发工程师自己完成。传统软件产品生命周期较长，每次build过程中都会多次反复执行单元测试。</li>
+<li>API 测试<br>针对各模块暴露的接口，通常采用灰盒测试方法。灰盒测试的核心思想是利用测试执行的代码覆盖率来指导测试用例的设计。</li>
+<li>GUI 测试<br>也成为端到端（E2E）测试，通常是模拟真实用户使用软件的行为，即模拟用户在软件界面上的各种操作，并验证这些操作对应的结果是否正确。<br>优点是直接验证软件的商业价值；缺点是执行的代价比较大，就算采用GUI自动化测试技术，用例的维护和执行代价依然很大。所以要尽可能避免对GUI测试的过度依赖。<h2 id="互联网产品的测试策略设计"><a href="#互联网产品的测试策略设计" class="headerlink" title="互联网产品的测试策略设计"></a>互联网产品的测试策略设计</h2>遵循重量级API测试，轻量级GUI测试，轻量级单元测试的原则。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     |GUI Test|</span><br><span class="line">|     API Test      |</span><br><span class="line">     |Unit Test|</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="查找log来源"><a href="#查找log来源" class="headerlink" title="查找log来源"></a>查找log来源</h1><p>接下来看看这部分log是从哪儿得到的，查看Console窗口可以发现，RED也是通过命令行的方式来调用case的，以下是RED执行case时的命令：<br>Command: /usr/local/Cellar/python/3.6.4_3/bin/python -m robot.run –listener /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/TestRunnerAgent.py:52030 –argumentfile /var/folders/5y/4z20xf291sbf7l782tdtfnzc0000gn/T/RobotTempDir5265117293107482497/args_9cf946db.arg /Users/yunduanapi_test<br>发现这里用了一个–listener参数，后面还带了一个TestRunnerAgent.py文件和相应的端口号。<br>使用netstat -an | grep 52030发现，当运行case的时候，这个端口是打开的<br>tcp4       0      0  127.0.0.1.52030        127.0.0.1.52035        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52035        127.0.0.1.52030        ESTABLISHED<br>tcp4       0      0  127.0.0.1.52030        <em>.</em>                    LISTEN<br>说明存在socket通讯。<br>再去查看TestRunnerAgent.py文件，注释就写的很清楚了：<br>‘’’<br>A Robot Framework listener that sends information to a socket<br>‘’’</p>
-<h1 id="重写监听类"><a href="#重写监听类" class="headerlink" title="重写监听类"></a>重写监听类</h1><p>于是接下来参考前面提到的博文，以及官网对listener参数的说明：<br><a href="http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface" target="_blank" rel="noopener">http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#listener-interface</a><br>新建RobotListener.py，重写监听类：<br>‘’’<br>   class RobotListener(object):<br>       ROBOT_LISTENER_API_VERSION = 2</p>
-<pre><code>def start_suite(self, name, args):
-    print &quot;Starting Suite : &quot; + name + &quot;  &quot; + args[&apos;source&apos;]
-
-def start_test(self, name, args):
-    print &quot;Starting test : &quot; + name
-    if args[&apos;template&apos;]:
-        print &apos;Template is : &apos; + args[&apos;template&apos;]
-
-def end_test(self, name, args):
-    print &quot;Ending test:  &quot; + args[&apos;longname&apos;]
-    print &quot;Test Result is : &quot; + args[&apos;status&apos;]
-    print &quot;Test Time is: &quot; + str(args[&apos;elapsedtime&apos;])
-
-def log_message(self, message):
-    print message[&apos;timestamp&apos;] + &quot; :   &quot; + message[&apos;level&apos;] + &quot; : &quot; + message[&apos;message&apos;]
-</code></pre><p>‘’’<br>OK，然后自己在命令行调用的时候，参数中带上这个类就可以啦！</p>
-<h1 id="使用自己的监听类，运行case"><a href="#使用自己的监听类，运行case" class="headerlink" title="使用自己的监听类，运行case"></a>使用自己的监听类，运行case</h1><p>如：{WORKSPACE}是项目所在目录，刚才的监听类保存在{WORKSPACE}/RobotListener.py，要运行的case保存在{WORKSPACE}\TestCase下<br>就像这样，进入项目所在目录，根据你自己的项目路径，对下面的命令稍作修改，即可执行：<br>‘’’<br>cd {WORKSPACE}<br>/usr/local/Cellar/python/3.6.4_3/bin/python -m robot.run  \<br>–listener RobotListener.py  \<br>–pythonpath {YOUR_PYTHON_PATH}   \<br>{WORKSPACE}\TestCase<br>‘’’<br>结果如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/9701136-fe0e1cf55ad3549f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="test_log.jpg"></p>
-<p>可以看到，这样在Console窗口就出现了我们想要的log了，和命令行日志一起展现出来。<br>下面还可以保存到文件，进行二次处理等，就不是什么难事了。</p>
+<p>也来图示一下，是一个菱形，中间厚重，两头小。</p>
+<h3 id="一、GUI-测试"><a href="#一、GUI-测试" class="headerlink" title="一、GUI 测试"></a>一、GUI 测试</h3><p>互联网产品的上线周期，决定了GUI测试不可能大范围开展。</p>
+<ol>
+<li>互联网产品的迭代周期决定了留给开发GUI自动化测试用例的时间非常有限。</li>
+<li>互联网产品客户端界面的频繁变化，决定了开展GUI自动化测试的效率会非常低。<br>因此GUI测试通常采用”手工为主，自动化为辅”的测试策略。手工测试则往往利用探索性测试思想，针对新开发或者新修改的界面功能进行测试，而自动化测试关注相对稳定且核心业务的基本功能验证。<h3 id="二、API-测试"><a href="#二、API-测试" class="headerlink" title="二、API 测试"></a>二、API 测试</h3>把重点放在API测试上的五条原因</li>
+<li>API 测试用例的开发与调试效率比GUI测试要高得多。</li>
+<li>API 测试用例的执行稳定性远远高于GUI测试。</li>
+<li>单个API测试用例的执行时间往往要比GUI测试短很多。</li>
+<li>目前很多互联网产品采用微服务架构。对微服务的测试，本质上就是对不同的Web Service的测试，也就是API测试。微服务架构下，客户端应用的实现都是基于对后端微服务的调用。</li>
+<li>API接口的改动一般比较少。即使改动，绝大多数情况下也需要保证向后兼容性。<br>因此，API测试可以实现良好的投入产出比。<h3 id="三、单元测试"><a href="#三、单元测试" class="headerlink" title="三、单元测试"></a>三、单元测试</h3>互联网产品的”快”，基本不会有时间去做全面的单元测试。<br>单元测试策略要采用”分而治之”的思想。<br>互联网产品通常会分为<strong>应用层</strong>和<strong>后端服务</strong>，后端服务可以进一步细分为应用服务和基础服务。<br>后端服务有必要展开全面的单元测试，而客户端应用和非公用的后端应用服务，一般很少去做单元测试。</li>
+</ol>
+<p>总结起来，互联网产品的全面单元测试，只会应用在哪些相对稳定和最核心的模块和服务上。</p>
+<h2 id="总结菱形模型的关键点"><a href="#总结菱形模型的关键点" class="headerlink" title="总结菱形模型的关键点"></a>总结菱形模型的关键点</h2><ul>
+<li>以API测试为重点做全面的测试</li>
+<li>轻量级GUI测试，只覆盖最核心直接影响主营业务流程的E2E场景</li>
+<li>最上层GUI测试通常利用探索性测试思维</li>
+<li>单元测试采用”分而治之”的思想，只对那些相对稳定并且核心的服务和模块开展全面的单元测试</li>
+</ul>
+<p>【心得】<br>综合自己的从业经历，以及同行小伙伴们的经验，不少公司可能连传统软件产品的那一套测试策略都没有采用，而是把重点放在了GUI手工测试上面。<br>所以也就总有人抱怨：测试人员技术能力不高，被开发鄙视，等等。通过作者这样一分析，可以结合自己所在公司产品的情况——是传统软件产品，还是互联网产品，而调整自己的测试策略，以小博大。<br>另外，关于API的部分作者提到了微服务架构。这点也是自己薄弱的地方，虽然有做API测试，却没有很好地了解这部分的知识。结合作者前面几讲说过的内容，测试一个产品就要了解他，看来需要去补补微服务相关的知识，帮助自己更好的做api测试，更好的去制定测试策略。</p>
 
       
     </div>
@@ -455,7 +457,9 @@ def log_message(self, message):
           
             <a href="/tags/测试/" rel="tag"># 测试</a>
           
-            <a href="/tags/自动化/" rel="tag"># 自动化</a>
+            <a href="/tags/理论/" rel="tag"># 理论</a>
+          
+            <a href="/tags/体系/" rel="tag"># 体系</a>
           
         </div>
       
@@ -468,8 +472,8 @@ def log_message(self, message):
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/selenium-selenide-katalon/" rel="next" title="自动化测试工具知多少之——Selenium, Selenide和Katalon">
-                <i class="fa fa-chevron-left"></i> 自动化测试工具知多少之——Selenium, Selenide和Katalon
+              <a href="/2018/07/27/links/" rel="next" title="整理一波技术博客、网站">
+                <i class="fa fa-chevron-left"></i> 整理一波技术博客、网站
               </a>
             
           </div>
@@ -477,10 +481,6 @@ def log_message(self, message):
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/14/to-test-architect/" rel="prev" title="读《测试架构师修炼之道》 -- 概览">
-                读《测试架构师修炼之道》 -- 概览 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,7 +645,7 @@ def log_message(self, message):
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找log来源"><span class="nav-number">2.</span> <span class="nav-text">查找log来源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重写监听类"><span class="nav-number">3.</span> <span class="nav-text">重写监听类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用自己的监听类，运行case"><span class="nav-number">4.</span> <span class="nav-text">使用自己的监听类，运行case</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#11-互联网产品的测试策略应该如何设计？"><span class="nav-number">1.</span> <span class="nav-text">11 互联网产品的测试策略应该如何设计？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网产品和传统软件产品的不同"><span class="nav-number">1.1.</span> <span class="nav-text">互联网产品和传统软件产品的不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统软件产品的测试策略设计"><span class="nav-number">1.2.</span> <span class="nav-text">传统软件产品的测试策略设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网产品的测试策略设计"><span class="nav-number">1.3.</span> <span class="nav-text">互联网产品的测试策略设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、GUI-测试"><span class="nav-number">1.3.1.</span> <span class="nav-text">一、GUI 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、API-测试"><span class="nav-number">1.3.2.</span> <span class="nav-text">二、API 测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、单元测试"><span class="nav-number">1.3.3.</span> <span class="nav-text">三、单元测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结菱形模型的关键点"><span class="nav-number">1.4.</span> <span class="nav-text">总结菱形模型的关键点</span></a></li></ol></li></ol></div>
             
 
           </div>
